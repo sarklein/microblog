@@ -2,6 +2,8 @@
 
 I deployed an open-source Flask app to AWS using ECS Fargate, an Application Load Balancer, and an RDS MySQL database. I set everything up by hand in the console. Next I'll rebuild it with Terraform.
 
+I built this project to learn how the pieces of a real cloud deployment fit together: networking, database, secrets, container service, and monitoring. After going through each area in my coursework and tutorials, I wanted to practice the overall setup to get comfortable with the tools.
+
 The app is Miguel Grinberg's Microblog ([original repo](https://github.com/miguelgrinberg/microblog)), not mine. It's released under the MIT License, copyright Miguel Grinberg, and his LICENSE file is kept in this repo. The only thing I changed in the app was the Dockerfile. All of the AWS setup is mine.
 
 <!-- 📸 PICTURE 1: the app loaded from the load balancer URL -->
