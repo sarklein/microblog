@@ -42,6 +42,8 @@ The service runs one task and the target shows healthy.
 <!-- 📸 PICTURE 5: target group with the target Healthy -->
 ![Healthy target](docs/images/05-target-healthy.png)
 
+I also registered a user, stopped the task so ECS started a new one, and logged back in. The data was still there, so it's stored in RDS and not inside the container.
+
 To test the alarm I set the service to zero tasks. The alarm went to "In alarm" and I got the email. Then I set it back to one.
 
 <!-- 📸 PICTURE 6: CloudWatch alarm in the "In alarm" state -->
