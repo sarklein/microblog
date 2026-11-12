@@ -57,7 +57,6 @@ The startup logs show the database migrations running against MySQL, so the app 
 - **Docker build failed.** The Dockerfile used `python:slim`, which pulled a Python version too new for a couple of the pinned packages, so they tried to compile and failed. I pinned the image to `python:3.11-slim`.
 - **The task kept failing its health check.** I had put the secret ARNs in the task definition's `environment` section, so the app got the ARN text instead of the actual values. Moving them to `secrets` fixed it.
 - **A subnet was in the wrong availability zone.** I saw it in the VPC resource map and recreated it, since RDS needs two zones.
-- **No AWS CLI on my laptop,** so I built and pushed the image from CloudShell.
 
 ## What I'd change
 
@@ -68,6 +67,6 @@ The startup logs show the database migrations running against MySQL, so the app 
 
 ## Cost
 
-[ADD YOUR REAL NUMBER FROM THE BILLING PAGE.] The load balancer, database, and Fargate task all bill by the hour, so I shut them down when I'm not working on it.
+About $2.50 so far over the few days I had it running. The load balancer, database, and Fargate task all bill by the hour. When I'm not working on it I stop the database and set the service to 0 tasks.
 
 **Tech:** AWS (VPC, ECS Fargate, ALB, RDS MySQL, Secrets Manager, ECR, IAM, CloudWatch, SNS, CloudShell), Docker, Flask
